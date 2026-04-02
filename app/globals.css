@@ -1,0 +1,78 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #1f2937;
+  --card: #f9fafb;
+  --card-foreground: #1f2937;
+  --popover: #ffffff;
+  --popover-foreground: #1f2937;
+  --primary: #0369a1;
+  --primary-foreground: #ffffff;
+  --primary-light: #0ea5e9;
+  --primary-dark: #0c4a6e;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #1f2937;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --accent: #10b981;
+  --accent-foreground: #ffffff;
+  --accent-light: #34d399;
+  --accent-dark: #047857;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #f3f4f6;
+  --ring: #0369a1;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: #111827;
+  --foreground: #f3f4f6;
+  --card: #1f2937;
+  --card-foreground: #f3f4f6;
+  --popover: #1f2937;
+  --popover-foreground: #f3f4f6;
+  --primary: #0ea5e9;
+  --primary-foreground: #0c4a6e;
+  --primary-light: #38bdf8;
+  --primary-dark: #0369a1;
+  --secondary: #1f2937;
+  --secondary-foreground: #f3f4f6;
+  --muted: #374151;
+  --muted-foreground: #9ca3af;
+  --accent: #34d399;
+  --accent-foreground: #047857;
+  --accent-light: #6ee7b7;
+  --accent-dark: #10b981;
+  --destructive: #ef4444;
+  --destructive-foreground: #fecaca;
+  --border: #374151;
+  --input: #374151;
+  --ring: #0ea5e9;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-balance;
+  }
+  
+  p {
+    @apply text-pretty;
+  }
+}
