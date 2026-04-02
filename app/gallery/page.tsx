@@ -3,6 +3,8 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import { X } from 'lucide-react'
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
 
 interface GalleryItem {
   id: number
@@ -68,7 +70,9 @@ export default function GalleryPage() {
     : galleryItems.filter(item => item.category === selectedCategory)
 
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <Header />
+      <main className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="bg-primary text-white py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -180,5 +184,7 @@ export default function GalleryPage() {
         </div>
       )}
     </main>
+      <Footer />
+    </>
   )
 }
