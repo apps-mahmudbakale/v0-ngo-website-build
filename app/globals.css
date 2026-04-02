@@ -1,6 +1,37 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+@theme inline {
+  --font-sans: 'Geist', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+  
+  --color-background: #ffffff;
+  --color-foreground: #1f2937;
+  --color-card: #f9fafb;
+  --color-card-foreground: #1f2937;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1f2937;
+  --color-primary: #0369a1;
+  --color-primary-foreground: #ffffff;
+  --color-primary-light: #0ea5e9;
+  --color-primary-dark: #0c4a6e;
+  --color-secondary: #f3f4f6;
+  --color-secondary-foreground: #1f2937;
+  --color-muted: #f3f4f6;
+  --color-muted-foreground: #6b7280;
+  --color-accent: #10b981;
+  --color-accent-foreground: #ffffff;
+  --color-accent-light: #34d399;
+  --color-accent-dark: #047857;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #e5e7eb;
+  --color-input: #f3f4f6;
+  --color-ring: #0369a1;
+  
+  --radius: 0.5rem;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -58,10 +89,13 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--border);
+    outline-color: var(--ring);
   }
+  
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
   }
   
   html {
@@ -69,10 +103,10 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply text-balance;
+    text-wrap: balance;
   }
   
   p {
-    @apply text-pretty;
+    text-wrap: pretty;
   }
 }

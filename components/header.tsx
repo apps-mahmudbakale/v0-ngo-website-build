@@ -11,6 +11,7 @@ export function Header() {
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/programs', label: 'Programs' },
+    { href: '/gallery', label: 'Gallery' },
     { href: '/get-involved', label: 'Get Involved' },
     { href: '/contact', label: 'Contact' },
   ]
