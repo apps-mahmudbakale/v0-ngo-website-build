@@ -72,9 +72,9 @@ export default function Home() {
             </div>
 
             {/* Hero Image */}
-            <div className="relative h-96 md:h-[500px] rounded-xl overflow-hidden shadow-xl">
+            <div className="relative h-96 md:h-[335px] rounded-xl overflow-hidden shadow-xl">
               <Image
-                src="/hero-image.jpg"
+                src="/hero.jpeg"
                 alt="Healthcare professionals providing compassionate care"
                 fill
                 className="object-cover"

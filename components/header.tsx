@@ -11,6 +11,7 @@ export function Header() {
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/programs', label: 'Programs' },
+    { href: '/team', label: 'Team' },
     { href: '/gallery', label: 'Gallery' },
     { href: '/get-involved', label: 'Get Involved' },
     { href: '/contact', label: 'Contact' },
@@ -23,7 +24,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white text-sm font-bold">PICC</span>
+             <img src="/logo.jpeg" alt="" />
             </div>
             <span className="hidden sm:inline font-bold text-primary text-lg">
               Prevention is Cheaper
