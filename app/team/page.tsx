@@ -38,16 +38,16 @@ const team = [
     image: '/Micah.jpeg',
   },
   {
-    name: 'Dr. Mildred',
+    name: 'Dr. Odukwu Mildred Chikaodinaka',
     role: 'Director of Partnerships',
     bio: 'Dr. Mildred manages our global network of NGOs, governments, and healthcare institutions to amplify our collective impact.',
-    image: '/placeholder-user.jpg',
+    image: '/Mildred.jpeg',
   },
   {
     name: 'Mahmoud Bakale',
     role: 'IT / Operations Manager',
     bio: 'A technology innovator and IT operations professional with multidisciplinary experience in software development, infrastructure management, networking, and digital operations. Mahmoud specializes in building scalable web platforms with Next.js, React, TypeScript, and Laravel while also driving operational efficiency through technology strategy, systems integration, and infrastructure planning. His work spans healthcare technology, business development support, and emerging data center and networking solutions focused on scalability, reliability, and long-term digital growth.',
-    image: '/placeholder-user.jpg',
+    image: '/bakale.jpeg',
   },
 ]
 

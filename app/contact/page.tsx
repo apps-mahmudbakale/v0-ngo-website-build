@@ -36,13 +36,13 @@ export default function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      content: 'info@picc.org',
+      content: 'preventioncheaperthancure@gmail.com, info@cheaperthancure.org',
       subtext: 'General inquiries',
     },
     {
       icon: Phone,
       title: 'Phone',
-      content: '+1 (234) 567-890',
+      content: '+2347064951002',
       subtext: 'Mon-Fri, 9 AM - 6 PM',
     },
     {
@@ -59,28 +59,7 @@ export default function Contact() {
     },
   ]
 
-  const departments = [
-    {
-      name: 'Partnerships & Donations',
-      email: 'partnerships@picc.org',
-      description: 'Corporate partnerships, sponsorships, and donations',
-    },
-    {
-      name: 'Volunteer Programs',
-      email: 'volunteers@picc.org',
-      description: 'Volunteering opportunities and programs',
-    },
-    {
-      name: 'Program Inquiries',
-      email: 'programs@picc.org',
-      description: 'Questions about our healthcare initiatives',
-    },
-    {
-      name: 'Media & Communications',
-      email: 'media@picc.org',
-      description: 'Press inquiries and media requests',
-    },
-  ]
+  const departments = []
 
   return (
     <main className="min-h-screen flex flex-col">
