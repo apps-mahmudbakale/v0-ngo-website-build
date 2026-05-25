@@ -1,47 +1,27 @@
-import { PrismaClient } from '@prisma/client'
 import { NextRequest, NextResponse } from 'next/server'
 
 export const dynamic = 'force-dynamic'
 
-const prisma = new PrismaClient()
-
 export async function GET() {
   try {
-    const teamMembers = await prisma.teamMember.findMany({
-      orderBy: { createdAt: 'asc' },
-    })
-    return NextResponse.json(teamMembers)
+    // TODO: Connect to Neon database when DATABASE_URL is available
+    return NextResponse.json([])
   } catch (error) {
     console.error('Error fetching team members:', error)
     return NextResponse.json(
-      { error: 'Failed to fetch team members' },
-      { status: 500 }
+      { error: 'Database not configured yet' },
+      { status: 503 }
     )
   }
 }
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json()
-    const { name, role, bio, image } = body
-
-    if (!name || !role || !bio || !image) {
-      return NextResponse.json(
-        { error: 'Missing required fields' },
-        { status: 400 }
-      )
-    }
-
-    const teamMember = await prisma.teamMember.create({
-      data: {
-        name,
-        role,
-        bio,
-        image,
-      },
-    })
-
-    return NextResponse.json(teamMember, { status: 201 })
+    // TODO: Connect to Neon database when DATABASE_URL is available
+    return NextResponse.json(
+      { error: 'Database not configured yet' },
+      { status: 503 }
+    )
   } catch (error) {
     console.error('Error creating team member:', error)
     return NextResponse.json(

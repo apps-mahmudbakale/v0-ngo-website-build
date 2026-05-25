@@ -1,29 +1,17 @@
-import { PrismaClient } from '@prisma/client'
 import { NextRequest, NextResponse } from 'next/server'
 
 export const dynamic = 'force-dynamic'
-
-const prisma = new PrismaClient()
 
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = await params
-    const numId = parseInt(id)
-    const galleryItem = await prisma.galleryItem.findUnique({
-      where: { id: numId },
-    })
-
-    if (!galleryItem) {
-      return NextResponse.json(
-        { error: 'Gallery item not found' },
-        { status: 404 }
-      )
-    }
-
-    return NextResponse.json(galleryItem)
+    // TODO: Connect to Neon database when DATABASE_URL is available
+    return NextResponse.json(
+      { error: 'Database not configured yet' },
+      { status: 503 }
+    )
   } catch (error) {
     console.error('Error fetching gallery item:', error)
     return NextResponse.json(
@@ -38,22 +26,11 @@ export async function PUT(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = await params
-    const numId = parseInt(id)
-    const body = await request.json()
-    const { title, description, image, category } = body
-
-    const galleryItem = await prisma.galleryItem.update({
-      where: { id: numId },
-      data: {
-        title,
-        description,
-        image,
-        category,
-      },
-    })
-
-    return NextResponse.json(galleryItem)
+    // TODO: Connect to Neon database when DATABASE_URL is available
+    return NextResponse.json(
+      { error: 'Database not configured yet' },
+      { status: 503 }
+    )
   } catch (error) {
     console.error('Error updating gallery item:', error)
     return NextResponse.json(
@@ -68,13 +45,11 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = await params
-    const numId = parseInt(id)
-    await prisma.galleryItem.delete({
-      where: { id: numId },
-    })
-
-    return NextResponse.json({ success: true })
+    // TODO: Connect to Neon database when DATABASE_URL is available
+    return NextResponse.json(
+      { error: 'Database not configured yet' },
+      { status: 503 }
+    )
   } catch (error) {
     console.error('Error deleting gallery item:', error)
     return NextResponse.json(

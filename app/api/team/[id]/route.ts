@@ -1,29 +1,17 @@
-import { PrismaClient } from '@prisma/client'
 import { NextRequest, NextResponse } from 'next/server'
 
 export const dynamic = 'force-dynamic'
-
-const prisma = new PrismaClient()
 
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = await params
-    const numId = parseInt(id)
-    const teamMember = await prisma.teamMember.findUnique({
-      where: { id: numId },
-    })
-
-    if (!teamMember) {
-      return NextResponse.json(
-        { error: 'Team member not found' },
-        { status: 404 }
-      )
-    }
-
-    return NextResponse.json(teamMember)
+    // TODO: Connect to Neon database when DATABASE_URL is available
+    return NextResponse.json(
+      { error: 'Database not configured yet' },
+      { status: 503 }
+    )
   } catch (error) {
     console.error('Error fetching team member:', error)
     return NextResponse.json(
@@ -38,22 +26,11 @@ export async function PUT(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = await params
-    const numId = parseInt(id)
-    const body = await request.json()
-    const { name, role, bio, image } = body
-
-    const teamMember = await prisma.teamMember.update({
-      where: { id: numId },
-      data: {
-        name,
-        role,
-        bio,
-        image,
-      },
-    })
-
-    return NextResponse.json(teamMember)
+    // TODO: Connect to Neon database when DATABASE_URL is available
+    return NextResponse.json(
+      { error: 'Database not configured yet' },
+      { status: 503 }
+    )
   } catch (error) {
     console.error('Error updating team member:', error)
     return NextResponse.json(
@@ -68,13 +45,11 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = await params
-    const numId = parseInt(id)
-    await prisma.teamMember.delete({
-      where: { id: numId },
-    })
-
-    return NextResponse.json({ success: true })
+    // TODO: Connect to Neon database when DATABASE_URL is available
+    return NextResponse.json(
+      { error: 'Database not configured yet' },
+      { status: 503 }
+    )
   } catch (error) {
     console.error('Error deleting team member:', error)
     return NextResponse.json(
