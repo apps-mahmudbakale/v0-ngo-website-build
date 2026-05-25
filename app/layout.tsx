@@ -9,20 +9,20 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: 'Prevention is Cheaper Than Cure | Medical Foundation',
   description: 'A non-profit medical foundation dedicated to improving healthcare access, disease prevention, and community health initiatives globally.',
-  generator: 'v0.app',
+  generator: 'Mahmud Bakale',
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: '/logo.jpeg',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: '/logo.jpeg',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/logo.jpeg',
+        type: 'image/jpg',
       },
     ],
     apple: '/apple-icon.png',
