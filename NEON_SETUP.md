@@ -13,7 +13,7 @@ This project uses Neon as the PostgreSQL database provider with Prisma ORM.
 
 ### 2. Configure Environment Variables
 
-1. Open `.env.local` in the project root
+1. Open `.env` in the project root
 2. Replace the `DATABASE_URL` with your Neon connection string:
    ```
    DATABASE_URL="postgresql://user:password@ep-xxxxx.us-east-1.neon.tech/neondb?sslmode=require"
