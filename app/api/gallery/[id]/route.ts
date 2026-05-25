@@ -1,16 +1,19 @@
 import { PrismaClient } from '@prisma/client'
 import { NextRequest, NextResponse } from 'next/server'
 
+export const dynamic = 'force-dynamic'
+
 const prisma = new PrismaClient()
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const id = parseInt(params.id)
+    const { id } = await params
+    const numId = parseInt(id)
     const galleryItem = await prisma.galleryItem.findUnique({
-      where: { id },
+      where: { id: numId },
     })
 
     if (!galleryItem) {
@@ -32,15 +35,16 @@ export async function GET(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const id = parseInt(params.id)
+    const { id } = await params
+    const numId = parseInt(id)
     const body = await request.json()
     const { title, description, image, category } = body
 
     const galleryItem = await prisma.galleryItem.update({
-      where: { id },
+      where: { id: numId },
       data: {
         title,
         description,
@@ -61,12 +65,13 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const id = parseInt(params.id)
+    const { id } = await params
+    const numId = parseInt(id)
     await prisma.galleryItem.delete({
-      where: { id },
+      where: { id: numId },
     })
 
     return NextResponse.json({ success: true })

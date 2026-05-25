@@ -1,16 +1,19 @@
 import { PrismaClient } from '@prisma/client'
 import { NextRequest, NextResponse } from 'next/server'
 
+export const dynamic = 'force-dynamic'
+
 const prisma = new PrismaClient()
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const id = parseInt(params.id)
+    const { id } = await params
+    const numId = parseInt(id)
     const teamMember = await prisma.teamMember.findUnique({
-      where: { id },
+      where: { id: numId },
     })
 
     if (!teamMember) {
@@ -32,15 +35,16 @@ export async function GET(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const id = parseInt(params.id)
+    const { id } = await params
+    const numId = parseInt(id)
     const body = await request.json()
     const { name, role, bio, image } = body
 
     const teamMember = await prisma.teamMember.update({
-      where: { id },
+      where: { id: numId },
       data: {
         name,
         role,
@@ -61,12 +65,13 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const id = parseInt(params.id)
+    const { id } = await params
+    const numId = parseInt(id)
     await prisma.teamMember.delete({
-      where: { id },
+      where: { id: numId },
     })
 
     return NextResponse.json({ success: true })
