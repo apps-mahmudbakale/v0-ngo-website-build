@@ -1,6 +1,5 @@
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import { Mail, Linkedin } from 'lucide-react'
 
 export const metadata = {
   title: 'Our Team | Prevention is Cheaper Than Cure',
@@ -9,39 +8,45 @@ export const metadata = {
 
 const team = [
   {
-    name: 'Dr. Sarah Mensah',
+    name: 'Dr. Nwokiea Obinna',
     role: 'Executive Director',
-    bio: 'With over 20 years in global public health, Dr. Mensah leads our strategic vision and partnerships across Africa and beyond.',
-    image: '/placeholder-user.jpg',
+    bio: 'With over 10 years in preventive health, he leads the foundation\'s strategic vision and partnerships across Africa and beyond, championing innovative approaches to early detection, health education, and community-centered prevention.',
+    image: '/Obinna.jpeg',
   },
   {
-    name: 'Dr. James Okafor',
+    name: 'Dr. Obum',
     role: 'Medical Director',
-    bio: 'A specialist in preventive medicine, Dr. Okafor oversees all clinical programs and ensures evidence-based approaches across our initiatives.',
+    bio: 'A specialist in preventive medicine, Dr. Obum oversees all clinical programs and ensures evidence-based approaches across our initiatives.',
     image: '/placeholder-user.jpg',
   },
   {
-    name: 'Amina Diallo',
+    name: 'Nrs Nneoma',
+    role: 'Secretary / Financial Manager',
+    bio: 'Nrs Nneoma ensures transparent financial stewardship and operational efficiency across all our programs worldwide.',
+    image: '/placeholder-user.jpg',
+  },
+  {
+    name: 'Miss Chidiogo',
     role: 'Head of Community Outreach',
-    bio: 'Amina brings 15 years of grassroots experience, building trust and lasting relationships with the communities we serve.',
+    bio: 'Miss Chidiogo brings grassroots experience, building trust and lasting relationships with the communities we serve.',
     image: '/placeholder-user.jpg',
   },
   {
-    name: 'Dr. Kwame Asante',
-    role: 'Research & Innovation Lead',
-    bio: 'Dr. Asante drives our medical research agenda, identifying emerging health challenges and developing scalable prevention strategies.',
-    image: '/placeholder-user.jpg',
+    name: 'Dr. Micah Panguru',
+    role: 'Project / Research / Innovation Lead',
+    bio: 'A medical doctor, public health researcher, and innovation lead passionate about preventive healthcare, global health, and strengthening community health systems in Nigeria and globally.',
+    image: '/Micah.jpeg',
   },
   {
-    name: 'Fatima Al-Hassan',
+    name: 'Dr. Mildred',
     role: 'Director of Partnerships',
-    bio: 'Fatima manages our global network of NGOs, governments, and healthcare institutions to amplify our collective impact.',
+    bio: 'Dr. Mildred manages our global network of NGOs, governments, and healthcare institutions to amplify our collective impact.',
     image: '/placeholder-user.jpg',
   },
   {
-    name: 'Emmanuel Nkosi',
-    role: 'Finance & Operations Manager',
-    bio: 'Emmanuel ensures transparent financial stewardship and operational efficiency across all our programs worldwide.',
+    name: 'Mahmoud Bakale',
+    role: 'IT / Operations Manager',
+    bio: 'A technology innovator and IT operations professional with multidisciplinary experience in software development, infrastructure management, networking, and digital operations. Mahmoud specializes in building scalable web platforms with Next.js, React, TypeScript, and Laravel while also driving operational efficiency through technology strategy, systems integration, and infrastructure planning. His work spans healthcare technology, business development support, and emerging data center and networking solutions focused on scalability, reliability, and long-term digital growth.',
     image: '/placeholder-user.jpg',
   },
 ]
@@ -68,19 +73,19 @@ export default function Team() {
             {team.map((member, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg border border-border overflow-hidden hover:shadow-lg transition-shadow"
+                className="bg-white rounded-lg border border-border overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
               >
-                <div className="h-56 bg-muted relative overflow-hidden">
+                <div className="h-80 bg-muted relative overflow-hidden flex-shrink-0">
                   <img
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex-1">
                   <h3 className="text-xl font-bold text-primary">{member.name}</h3>
                   <p className="text-accent font-medium text-sm mb-3">{member.role}</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{member.bio}</p>
+                  <p className="text-muted-foreground text-sm text-justify leading-relaxed">{member.bio}</p>
                 </div>
               </div>
             ))}

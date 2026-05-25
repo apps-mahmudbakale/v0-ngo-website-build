@@ -27,7 +27,7 @@ export function Header() {
              <img src="/logo.jpeg" alt="" />
             </div>
             <span className="hidden sm:inline font-bold text-primary text-lg">
-              Prevention is Cheaper
+              Prevention is Cheaper Than Cure
             </span>
           </Link>
 
