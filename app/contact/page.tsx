@@ -48,8 +48,8 @@ export default function Contact() {
     {
       icon: MapPin,
       title: 'Address',
-      content: 'Global Healthcare Center',
-      subtext: 'Multiple locations worldwide',
+      content: '25 Yakubu Gowon Crescent',
+      subtext: 'Asokoro, FCT, Abuja-Nigeria',
     },
     {
       icon: Clock,
